@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objetos>
+    <Objeto>
+        <id>1</id>
+        <Fecha>08/05/1998</Fecha>
+        <Nombre>Stephanie Cruz</Nombre>
+        <Accion>COMMIT</Accion>
+    </Objeto>
+    <Objeto>
+        <id>2</id>
+        <Fecha>02/02/1998</Fecha>
+        <Nombre>Michelle Alleyne</Nombre>
+    </Objeto>
+    <Objeto>
+        <id>3</id>
+        <Fecha>15/12/1998</Fecha>
+        <Nombre>Diego De Quintal</Nombre>
+        <Accion>ABORT</Accion>
+    </Objeto>
+</Objetos>
