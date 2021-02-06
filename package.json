@@ -1,0 +1,26 @@
+{
+  "name": "manejador-de-objetos-usando-rest",
+  "version": "1.0.0",
+  "description": "Proyecto de la Cátedra Sistemas distribuidos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tetecruzc/Manejador-de-Objetos-usando-REST.git"
+  },
+  "author": "Stephanie Cruz, Diego De Quintal y Michelle Alleyne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tetecruzc/Manejador-de-Objetos-usando-REST/issues"
+  },
+  "homepage": "https://github.com/tetecruzc/Manejador-de-Objetos-usando-REST#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
