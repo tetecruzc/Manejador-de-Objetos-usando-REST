@@ -2,11 +2,10 @@ var path = require("path");
 var convert = require('xml-js');
 const fs = require('fs');
 
-
+const xml = fs.readFileSync(path.resolve(__dirname, "object.xml"), 'utf8');
 const options = {ignoreComment: true, alwaysChildren: false, compact: true};
 
 const getObjects = () => {
-   const xml = fs.readFileSync(path.resolve(__dirname, "object.xml"), 'utf-8');
    return convert.xml2js(xml, options); 
 }
 
@@ -74,14 +73,14 @@ const deleteObject = (id) => {
     saveFile(xmlObjects)
 }
 
-const replicateObjects = () => {
-    const xml = fs.readFileSync(path.resolve(__dirname, "object.xml"), 'utf-8');
-    return  xml;
+
+const getObjectsToBeRestored = () => {
+    return fs.readFileSync(path.resolve(__dirname, "object.xml"), 'utf-8');;
 }
 
 
 exports.searchAllObjects = searchAllObjects;
 exports.createObject = createObject;
 exports.deleteObject = deleteObject;
-exports.replicateObjects = replicateObjects;
+exports.getObjectsToBeRestored = getObjectsToBeRestored;
 exports.saveFile = saveFile;

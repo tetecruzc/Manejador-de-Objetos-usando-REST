@@ -36,11 +36,17 @@ router.post('/replicar', (req,res,next)=>{
     // 3) Replicar objeto en el coordinador de replicas
     server.replicarObjetos(objects, req.body.accion);
     // 4) Respuesta al cliente
+    const message = req.body.accion == 'COMMIT' ? 'Replicación realizada' : 'Replicación abortada'
     res.status(200).json({
-        message: 'Replicación en proceso'
+        message,
     })
 })
 
-
+router.post('/restaurar', (req,res,next)=>{
+    if (!req.body.server) res.status(404).json({message: 'Debe incluir el servidor'});
+    
+    server.restaurarObjetos(req.body.server)
+    res.status(200).json({message: 'Respaldo realizado' })
+})
 
 module.exports = router;

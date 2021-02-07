@@ -1,4 +1,5 @@
 const io = require("socket.io-client");
+const server= require("../server")
 const actions = require("../actions/actions");
 const socket = io("http://localhost:3000", {
   withCredentials: true
@@ -10,12 +11,16 @@ socket.on('successfullConnection', function(data) {
 })
 
 socket.on('ReplicarObjetos', function(data) {
-  console.log('REPLICAR OBJETO', data);
-  actions.replicarObjetos(data)
+  server.replicarObjetos(data);
 })
 
 socket.on('RestaurarObjetos', function(data) {
-  console.log('RESTAURAR OBJETO', data);
+  server.restaurarObjetos(data);
 })
 
+const restaurarObjetos = (objetos) =>{
+  socket.emit('RESTAURACION', objetos)
+}
+
 exports.socket = socket; 
+exports.restaurarObjetos= restaurarObjetos;
