@@ -1,11 +1,12 @@
 const io = require("socket.io-client");
 const db = require('../db/manage-db');
-const socket = io("http://localhost:3001", {
+const socket = io("http://10.2.126.76:3001", {
   withCredentials: true
 });
 
 // Conexión con el servidor de aplicación
 socket.on('successfullConnection', function(data) {
+    socket.emit('presentation', 'A')
     console.log('Respuesta del coordinador', data.message);
 })
 

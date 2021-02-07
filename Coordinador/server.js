@@ -13,8 +13,11 @@ const SAsocket = require('./sockets/SAsocket');
 
 // Conexión con servidores de replica
 const SRsocket = io.on('connection', (socket) => {
-  console.log(`Servidor de réplica conectado`);
   socket.emit('successfullConnection', { message: 'Conexión CO-SR exitosa' });
+
+  socket.on('presentation', (data)=> {
+    console.log(`Servidor de réplica ${data} conectado`);
+  })
 
   socket.on('SR_VOTE', (data) => {
     // Evalua los votos de los servidores de replica
