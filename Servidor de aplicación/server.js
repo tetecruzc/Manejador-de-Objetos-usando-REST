@@ -16,10 +16,12 @@ const socketIO = io.on('connection', (socket) => {
 });
 
 const replicarObjetos = (objetos, action) => {
+    console.log('Ha empezado la REPLICA DE OBJETOS')
     socketIO.emit('ReplicarObjetos', {'content': objetos, action})
 }
 
 const restaurarObjetos = (server) => {
+    console.log('Ha empezado la RESTAURACIÓN DE OBJETOS')
     socketIO.emit('RestaurarObjetos', server);
 }
 

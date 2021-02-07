@@ -4,9 +4,8 @@ const app = express();
 const port = process.env.PORT || 3001
 const server = http.createServer(app);
 const io = require('socket.io')(server);
-let servidoresDeReplica = 0;
-let votes = [];
-let allObjects;
+const actions = require('./replicas-actions/actions')
+
 server.listen(port);
 
 // Conexión con servidores de aplicacion
@@ -14,48 +13,30 @@ const SAsocket = require('./sockets/SAsocket');
 
 // Conexión con servidores de replica
 const SRsocket = io.on('connection', (socket) => {
-  servidoresDeReplica++;
   console.log(`Servidor de réplica conectado`);
   socket.emit('successfullConnection', { message: 'Conexión CO-SR exitosa' });
+
   socket.on('SR_VOTE', (data) => {
-    evaluateVotes(data)
+    // Evalua los votos de los servidores de replica
+    actions.evaluateVotes(data)
   })
-  socket.on('HACER_REPLICA', (data) => {
+
+  socket.on('HACER_REPLICA', () => {
     // Envia los objetos a los servidores de replica
-    SRsocket.emit('RECIBIR_OBJETOS', allObjects);
+    emitMessageToReplicates('RECIBIR_OBJETOS',  actions.getObjects())
   })
 
   socket.on('OBJETOS_RESTAURADOS', (objects) =>{
+    // Obtiene de los servidores de replica, los objetos restaurados
     SAsocket.restaurarObjetos(objects);
   })
 });
 
-SRsocket.on('disconnect', function() { servidoresDeReplica--; });
-
-
-const restaurarObjetos = (server) =>{
-  SRsocket.emit(server)
+const emitMessageToReplicates = (direction, data) => {
+  SRsocket.emit(direction, data)
 }
 
-const replicarObjetos = (objects) =>{
-  allObjects = objects.content;
-  SRsocket.emit('VOTE_REQUEST', objects.action)
-}
-
-
-const evaluateVotes  = (vote) => {
-  votes.push(vote);
-  if (votes.length  == 2) {
-    const action = vote.includes('VOTE_ABORT') ? 'GLOBAL_ABORT' : 'GLOBAL_COMMIT';
-    SRsocket.emit('GLOBAL_VOTE', action)
-    votes = [];
-  }
-}
-
-
-exports.SRsocket = SRsocket;
-exports.replicarObjetos = replicarObjetos;
-exports.restaurarObjetos = restaurarObjetos;
+exports.emitMessageToReplicates=emitMessageToReplicates;
 
 
 
