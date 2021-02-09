@@ -7,7 +7,15 @@ const options = {ignoreComment: true, alwaysChildren: false, compact: true};
 
 const getObjects = () => {
    const xml = fs.readFileSync(path.resolve(__dirname, "object.xml"), 'utf-8');
-   return convert.xml2js(xml, options); 
+   const allObjects =  convert.xml2js(xml, options); 
+
+   if (allObjects.Objetos.Objeto.id) {
+       const objeto = []
+       objeto.push(allObjects.Objetos.Objeto);
+       allObjects.Objetos.Objeto = objeto;
+   }
+
+   return allObjects;
 }
 
 const convertToXML = (objects) => {

@@ -27,6 +27,7 @@ export class ConsultarComponent implements OnInit {
   getObjects(): void {
     this.DBService.getObjects().subscribe(data => {
       this.objetos = [];
+ 
       data.Objetos.Objeto.map((el)=>{
         this.objetos.push({
           id: el.id._text, 
