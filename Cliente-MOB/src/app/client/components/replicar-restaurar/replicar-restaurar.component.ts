@@ -37,8 +37,9 @@ export class ReplicarRestaurarComponent implements OnInit {
   makeAction(): void {
     const {feature, dropdownContent} = this.form.value;
     this.loading = true;
-
-    if (feature == 'Replicar') this.replicar(dropdownContent);
+    console.log(feature);
+    
+    if (feature == 'Replica') this.replicar(dropdownContent);
     else this.restaurar(dropdownContent);
   }
 
@@ -61,7 +62,7 @@ export class ReplicarRestaurarComponent implements OnInit {
   private buildForm():void {
     const { content, label } = this.dropdownOptions.Replica;
     this.form  = this.formBuilder.group({
-      feature: [null, Validators.required],
+      feature: ['Replica', Validators.required],
       dropdownContent: [this.dropdownOptions.Replica.content[0]]
     })
 
@@ -71,22 +72,22 @@ export class ReplicarRestaurarComponent implements OnInit {
 
   replicar(action: string): void{
     this.DBService.replicateObject(action)
-    .then(() => {
-      this.toastr.success('Base de datos replicada con éxito');
+    .then((data) => {
+      this.toastr.success(data.message);
     })
     .catch((err) => {
-      this.toastr.error('Error replicando la base de datos');
+      this.toastr.error(err.error.message);
     })
     .finally(() => this.loading = false)
   }
 
   restaurar(server: string): void {
     this.DBService.restoreObject(server)
-    .then(() => {
-      this.toastr.success('Base de datos restaurada con éxito');
+    .then((data) => {
+      this.toastr.success(data.message);
     })
     .catch((err) => {
-      this.toastr.error('Error restaurando la base de datos');
+      this.toastr.error(err.error.message)
     })
     .finally(() => this.loading = false)
   }

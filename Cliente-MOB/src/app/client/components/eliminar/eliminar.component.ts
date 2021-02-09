@@ -28,12 +28,12 @@ export class EliminarComponent implements OnInit {
 
       this.loading = true;
       this.DBService.deleteObject(id)
-      .then(() => {
-        this.toastr.success('Objeto eliminado');
-        this.form.setValue({id: null});
+      .then((data) => {
+        this.toastr.success('Objeto eliminado exitosamente');
+        this.form.reset()
       })
-      .catch(() => {
-        this.toastr.error("Ocurrio un error eliminando el objeto");
+      .catch((err) => {
+        this.toastr.error(err.error.message);
       })
       .finally(() => this.loading = false)
     }
