@@ -12,7 +12,7 @@
         <button type="button" class="btn btn-dark" (click)="this.DBService.view = 'eliminar'">Eliminar objeto</button>
       </div>
       <div class="col">
-        <button type="button" class="btn btn-dark" (click)="this.DBService.view = 'replicar'">Replicar o restaurar datos</button>
+        <button type="button" class="btn btn-dark" (click)="this.DBService.view = 'replicar-restaurar'">Replicar o restaurar datos</button>
       </div>
     </div>
     <app-consultar *ngIf="this.DBService.view === 'consultar'" ></app-consultar>

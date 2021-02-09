@@ -24,12 +24,15 @@ export class DBService {
   }
 
 
-  replicateObject(accion: string): Observable<any> {
-    return this.http.post<{message: string}>(`${this.api}/replicar`, { accion })
+  replicateObject(accion: string): Promise<{message: string}>{
+    console.log('la accion es', accion)
+    return this.http.post<{message: string}>(`${this.api}/replicar`, { accion }).toPromise()
   }
 
 
   restoreObject(server: string): Observable<any> {
+    console.log('el server es ', server)
+
     return this.http.post<{message: string}>(`${this.api}/restaurar`, { server })
   }
 
