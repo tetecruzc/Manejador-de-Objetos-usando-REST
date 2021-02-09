@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Objetos>
-       <Objeto>
+    <Objeto>
         <id>1</id>
         <Fecha>1998-09-07</Fecha>
         <Nombre>Stephanie Cruz</Nombre>
@@ -16,6 +16,18 @@
         <id>3</id>
         <Fecha>1998-07-26</Fecha>
         <Nombre>Diego De Quintal</Nombre>
+        <Accion>ABORT</Accion>
+    </Objeto>
+    <Objeto>
+        <id>4</id>
+        <Fecha>2021-02-22</Fecha>
+        <Nombre>vera pizza</Nombre>
+        <Accion>COMMIT</Accion>
+    </Objeto>
+    <Objeto>
+        <id>5</id>
+        <Fecha>2021-03-09</Fecha>
+        <Nombre>Daniela Rodriguez</Nombre>
         <Accion>ABORT</Accion>
     </Objeto>
 </Objetos>

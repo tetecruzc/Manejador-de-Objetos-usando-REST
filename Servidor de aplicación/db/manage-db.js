@@ -9,7 +9,9 @@ const getObjects = () => {
    const xml = fs.readFileSync(path.resolve(__dirname, "object.xml"), 'utf-8');
    const allObjects =  convert.xml2js(xml, options); 
 
-   if (allObjects.Objetos.Objeto.id) {
+    if (!allObjects.Objetos.Objeto) {
+        allObjects.Objetos.Objeto = [];
+    }else if (allObjects.Objetos.Objeto && allObjects.Objetos.Objeto.id) {
        const objeto = []
        objeto.push(allObjects.Objetos.Objeto);
        allObjects.Objetos.Objeto = objeto;
