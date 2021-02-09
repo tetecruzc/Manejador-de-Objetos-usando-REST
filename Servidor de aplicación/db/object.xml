@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Objetos>
-    <Objeto>
+       <Objeto>
         <id>1</id>
         <Fecha>1998-09-07</Fecha>
         <Nombre>Stephanie Cruz</Nombre>
@@ -13,7 +13,7 @@
         <Accion>COMMIT</Accion>
     </Objeto>
     <Objeto>
-        <id>2</id>
+        <id>3</id>
         <Fecha>1998-07-26</Fecha>
         <Nombre>Diego De Quintal</Nombre>
         <Accion>ABORT</Accion>
