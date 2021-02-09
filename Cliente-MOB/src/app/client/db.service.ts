@@ -8,7 +8,6 @@ import { HttpClient } from "@angular/common/http";
 export class DBService {
 
   constructor(private http:HttpClient) {}
-
   api = 'api';
   view = 'menu';
 
@@ -18,6 +17,20 @@ export class DBService {
 
   createObject(objeto: any) {
     return this.http.post(`${this.api}/crear`, objeto);
+  }
+
+  deleteObject(id: number): Promise<any> {
+    return this.http.delete(`${this.api}/eliminar/${id}`).toPromise();
+  }
+
+
+  replicateObject(accion: string): Observable<any> {
+    return this.http.post<{message: string}>(`${this.api}/replicar`, { accion })
+  }
+
+
+  restoreObject(server: string): Observable<any> {
+    return this.http.post<{message: string}>(`${this.api}/restaurar`, { server })
   }
 
 }
