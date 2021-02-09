@@ -40,9 +40,9 @@ const transformObject = (object, id) =>{
         }
     }
 
-    if (object.action) 
-        transformatedObject["Action"] = {
-            "_text": object.action
+    if (object.accion) 
+        transformatedObject["Accion"] = {
+            "_text": object.accion
     }
 
     return transformatedObject;

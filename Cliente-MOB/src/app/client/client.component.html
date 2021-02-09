@@ -1,0 +1,23 @@
+<div class="client">
+  <div class="container">
+    <h1 class="text-center">Sistemas Distribuidos</h1>
+    <div *ngIf="this.DBService.view === 'menu'" class="row">
+      <div class="col">
+        <button type="button" class="btn btn-dark" (click)="this.DBService.view = 'consultar'">Consultar objetos</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-dark" (click)="this.DBService.view = 'crear'">Crear objeto</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-dark" (click)="this.DBService.view = 'eliminar'">Eliminar objeto</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-dark" (click)="this.DBService.view = 'replicar'">Replicar o restaurar datos</button>
+      </div>
+    </div>
+    <app-consultar *ngIf="this.DBService.view === 'consultar'" ></app-consultar>
+    <app-crear *ngIf="this.DBService.view === 'crear'" ></app-crear>
+    <app-eliminar *ngIf="this.DBService.view === 'eliminar'" ></app-eliminar>
+    <app-replicar-restaurar *ngIf="this.DBService.view === 'replicar-restaurar'" ></app-replicar-restaurar>
+  </div>  
+</div>
