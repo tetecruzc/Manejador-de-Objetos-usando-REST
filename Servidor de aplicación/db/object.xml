@@ -2,43 +2,20 @@
 <Objetos>
     <Objeto>
         <id>1</id>
-        <Fecha>08/05/1998</Fecha>
+        <Fecha>1998-09-07</Fecha>
         <Nombre>Stephanie Cruz</Nombre>
         <Accion>COMMIT</Accion>
     </Objeto>
     <Objeto>
         <id>2</id>
-        <Fecha>15/12/1998</Fecha>
-        <Nombre>Diego De Quintal</Nombre>
-        <Accion>ABORT</Accion>
+        <Fecha>1998-10-04</Fecha>
+        <Nombre>Michelle Alleyne</Nombre>
+        <Accion>COMMIT</Accion>
     </Objeto>
     <Objeto>
         <id>3</id>
-        <Fecha>04/10/2000</Fecha>
-        <Nombre>EJEMPLOOOOOOO</Nombre>
-        <Accion>COMMIT</Accion>
-    </Objeto>
-    <Objeto>
-        <id>4</id>
-        <Fecha>10/10/2001</Fecha>
-        <Nombre>RUI ALLEYNE</Nombre>
-        <Accion>COMMIT</Accion>
-    </Objeto>
-    <Objeto>
-        <id>5</id>
-        <Fecha>10/10/2001</Fecha>
-        <Nombre>ROMINA CRUZ</Nombre>
-        <Accion>COMMIT</Accion>
-    </Objeto>
-    <Objeto>
-        <id>6</id>
-        <Fecha>12/12/2010</Fecha>
-        <Nombre>Diego AA</Nombre>
-        <Accion>COMMIT</Accion>
-    </Objeto>
-    <Objeto>
-        <id>8</id>
-        <Fecha/>
-        <Nombre/>
+        <Fecha>1999-07-26</Fecha>
+        <Nombre>Diego De Quintal</Nombre>
+        <Accion>ABORT</Accion>
     </Objeto>
 </Objetos>
