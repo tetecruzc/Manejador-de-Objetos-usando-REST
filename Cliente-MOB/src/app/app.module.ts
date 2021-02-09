@@ -7,6 +7,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 import { ClientComponent } from './client/client.component';
 import { CrearComponent } from './client/components/crear/crear.component';
@@ -29,7 +31,8 @@ import { ReplicarRestaurarComponent } from './client/components/replicar-restaur
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

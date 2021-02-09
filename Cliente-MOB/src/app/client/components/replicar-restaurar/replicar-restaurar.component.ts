@@ -13,14 +13,14 @@ export class ReplicarRestaurarComponent implements OnInit {
   form: FormGroup;
   loading: boolean = false;
   dropdownLabel: string;
-  actionToMake = 'Replicar';
-  actionOptios = ['Replicar', 'Restaurar']
+  actionToMake = 'Replica';
+  actionOptios = ['Replica', 'Restauración']
   dropdownOptions ={
-    'Replicar': {
+    'Replica': {
       content: ['COMMIT', 'ABORT'],
       label: 'Elige la acción a realizar'
     },
-    'Restaurar': {
+    'Restauración': {
       content: ['RESTAURAR-A', 'RESTAURAR-B'],
       label: 'Elige el servidor para restaurar'
     }
@@ -46,7 +46,6 @@ export class ReplicarRestaurarComponent implements OnInit {
     this.buildForm();
     this.form.get('feature').valueChanges.subscribe((value) => {
         const {content, label } = this.dropdownOptions[value];
-        console.log(content)
         this.actionToMake = value;
         this.setDropDownOptions(content, label);
     })
@@ -60,10 +59,10 @@ export class ReplicarRestaurarComponent implements OnInit {
   }
 
   private buildForm():void {
-    const { content, label } = this.dropdownOptions.Replicar;
+    const { content, label } = this.dropdownOptions.Replica;
     this.form  = this.formBuilder.group({
       feature: [null, Validators.required],
-      dropdownContent: [this.dropdownOptions.Replicar.content[0]]
+      dropdownContent: [this.dropdownOptions.Replica.content[0]]
     })
 
 
@@ -82,7 +81,7 @@ export class ReplicarRestaurarComponent implements OnInit {
   }
 
   restaurar(server: string): void {
-    this.DBService.replicateObject(server)
+    this.DBService.restoreObject(server)
     .then(() => {
       this.toastr.success('Base de datos restaurada con éxito');
     })

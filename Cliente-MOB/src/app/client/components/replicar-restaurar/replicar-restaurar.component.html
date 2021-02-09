@@ -1,8 +1,16 @@
 <div>
-    <button type="button" class="btn btn-dark mr-3" (click)="this.DBService.view = 'menu'">Menu Principal</button>
+    <div>
+        <img
+          class="back-button"
+          src="assets/back.png"
+          width="auto"
+          height="40px"
+          alt="back"
+          (click)="this.DBService.view = 'menu'"
+        />    
     <div class="wrapper">
       <div class="card">
-        <h4>REPLICAR / RESTAURAR </h4>
+        <h5 class="mb-4">REPLICAR / RESTAURAR </h5>
         <form [formGroup]="form" class="needs-validation" (ngSubmit)="makeAction()" novalidate>
           <div class="form-row mb-2">
             <div class="col">

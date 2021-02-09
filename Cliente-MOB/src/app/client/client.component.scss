@@ -15,7 +15,7 @@
   padding-top: 40px;
 
   color: white;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .card {
@@ -40,4 +40,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.feature-icon {
+  font-size: 600%;
 }
