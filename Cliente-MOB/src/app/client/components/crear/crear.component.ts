@@ -27,4 +27,9 @@ export class CrearComponent implements OnInit {
     });
   }
 
+  createObject(): void {
+    this.DBService.createObject(this.createForm.value).subscribe(data=>{
+      console.log(data);
+    })
+  }
 }

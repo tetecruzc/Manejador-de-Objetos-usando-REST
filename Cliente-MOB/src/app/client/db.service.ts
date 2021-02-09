@@ -16,4 +16,8 @@ export class DBService {
     return this.http.get(`${this.api}/consultar`);
   }
 
+  createObject(objeto: any) {
+    return this.http.post(`${this.api}/crear`, objeto);
+  }
+
 }

@@ -30,4 +30,16 @@
         <Nombre>ROMINA CRUZ</Nombre>
         <Accion>COMMIT</Accion>
     </Objeto>
+    <Objeto>
+        <id>6</id>
+        <Fecha>12/12/2010</Fecha>
+        <Nombre>Diego AA</Nombre>
+        <Accion>COMMIT</Accion>
+    </Objeto>
+    <Objeto>
+        <id>7</id>
+        <Fecha>12/12/2010</Fecha>
+        <Nombre>Diegucho</Nombre>
+        <Accion>COMMIT</Accion>
+    </Objeto>
 </Objetos>

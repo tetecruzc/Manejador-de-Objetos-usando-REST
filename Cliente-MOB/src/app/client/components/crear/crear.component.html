@@ -1,77 +1,77 @@
 <div>
   <button type="button" class="btn btn-dark mr-3" (click)="this.DBService.view = 'menu'">Menu Principal</button>
-  <div class="row">
-    <div class="col">
-      <div class="card">
-        <form [formGroup]="createForm" class="needs-validation" novalidate>
-          <div class="form-row mb-2">
-            <div class="col">
-              <label class="sr-only">Nombre</label>
-              <input
-                formControlName="nombre"
-                id="nombre"
-                class="form-control"
-                placeholder="Nombre"
-                required
-                [ngClass]="{
-                  'is-invalid':
-                    this.createForm.get('nombre').invalid &&
-                    this.createForm.get('nombre').touched
-                }"
-              />
-              <div class="invalid-feedback font-size-11px mt-n3">
-                Introduce el nombre
-              </div>
+  <div class="wrapper">
+    <div class="card">
+      <form [formGroup]="createForm" class="needs-validation" novalidate>
+        <div class="form-row mb-2">
+          <div class="col">
+            <label class="sr-only">Nombre</label>
+            <input
+              formControlName="nombre"
+              id="nombre"
+              class="form-control"
+              placeholder="Nombre"
+              required
+              [ngClass]="{
+                'is-invalid':
+                  this.createForm.get('nombre').invalid &&
+                  this.createForm.get('nombre').touched
+              }"
+            />
+            <div class="invalid-feedback font-size-11px mt-n3">
+              Introduce el nombre
             </div>
           </div>
-          <div class="form-row mb-2">
-            <div class="col">
-              <label class="sr-only">Fecha</label>
-              <input
-                formControlName="nombre"
-                id="fecha"
-                class="form-control"
-                placeholder="Fecha"
-                required
-                [ngClass]="{
-                  'is-invalid':
-                    this.createForm.get('fecha').invalid &&
-                    this.createForm.get('fecha').touched
-                }"
-              />
-              <div class="invalid-feedback font-size-11px mt-n3">
-                Introduce la fecha
-              </div>
+        </div>
+        <div class="form-row mb-2">
+          <div class="col">
+            <label class="sr-only">Fecha</label>
+            <input
+              formControlName="fecha"
+              id="fecha"
+              class="form-control"
+              placeholder="Fecha"
+              required
+              [ngClass]="{
+                'is-invalid':
+                  this.createForm.get('fecha').invalid &&
+                  this.createForm.get('fecha').touched
+              }"
+            />
+            <div class="invalid-feedback font-size-11px mt-n3">
+              Introduce la fecha
             </div>
           </div>
-          <div class="form-row mb-2">
-            <div class="col">
-              <label class="sr-only">Accion</label>
-              <input
-                formControlName="nombre"
-                id="accion"
-                class="form-control"
-                placeholder="Accion"
-                required
-                [ngClass]="{
-                  'is-invalid':
-                    this.createForm.get('accion').invalid &&
-                    this.createForm.get('accion').touched
-                }"
-              />
-              <div class="invalid-feedback font-size-11px mt-n3">
-                Introduce la accion
-              </div>
+        </div>
+        <div class="form-row mb-2">
+          <div class="col">
+            <label class="sr-only">Accion</label>
+            <input
+              formControlName="accion"
+              id="accion"
+              class="form-control"
+              placeholder="Accion"
+              required
+              [ngClass]="{
+                'is-invalid':
+                  this.createForm.get('accion').invalid &&
+                  this.createForm.get('accion').touched
+              }"
+            />
+            <div class="invalid-feedback font-size-11px mt-n3">
+              Introduce la accion
             </div>
           </div>
-          <button
-            id="login"
-            class="btn btn-blue btn-block mb-5"
-            type="button"
-          >
-          </button>
-        </form>
-      </div>
+        </div>
+        <button
+          id="login"
+          class="btn btn-crear btn-dark mt-3"
+          type="button"
+          (click)="createObject()"
+        >
+        Crear
+        </button>
+      </form>
     </div>
   </div>
 </div>
