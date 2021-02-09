@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { ClientComponent } from './client/client.component';
 import { CrearComponent } from './client/components/crear/crear.component';
@@ -23,7 +25,8 @@ import { ReplicarRestaurarComponent } from './client/components/replicar-restaur
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

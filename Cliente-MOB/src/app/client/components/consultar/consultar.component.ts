@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DBService } from '../../db.service'
+import { DBService } from '../../db.service';
 
 interface objeto {
   id: number;
