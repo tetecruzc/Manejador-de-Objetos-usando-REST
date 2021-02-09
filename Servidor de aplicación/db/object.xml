@@ -37,9 +37,8 @@
         <Accion>COMMIT</Accion>
     </Objeto>
     <Objeto>
-        <id>7</id>
-        <Fecha>12/12/2010</Fecha>
-        <Nombre>Diegucho</Nombre>
-        <Accion>COMMIT</Accion>
+        <id>8</id>
+        <Fecha/>
+        <Nombre/>
     </Objeto>
 </Objetos>

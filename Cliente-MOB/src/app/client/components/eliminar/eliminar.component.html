@@ -1,7 +1,13 @@
 <div>
-    <button type="button" class="btn btn-dark mr-3" (click)="this.DBService.view = 'menu'">Menu Principal</button>
-    <div class="row mt-5">
-      <div class="col">
+    <img
+        class="back-button"
+        src="assets/back.png"
+        width="auto"
+        height="40px"
+        alt="back"
+        (click)="this.DBService.view = 'menu'"
+    />    
+    <div class="wrapper">
         <div class="card">
             <form [formGroup]="form" class="needs-validation" novalidate (ngSubmit)="deleteObject()">
                     <div class="form-row mb-2">
@@ -38,6 +44,5 @@
                     </div>
             </form>
         </div>
-      </div>
     </div>
 </div>

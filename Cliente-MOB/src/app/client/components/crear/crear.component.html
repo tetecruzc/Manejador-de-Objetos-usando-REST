@@ -1,5 +1,12 @@
 <div>
-  <button type="button" class="btn btn-dark mr-3" (click)="this.DBService.view = 'menu'">Menu Principal</button>
+  <img
+    class="back-button"
+    src="assets/back.png"
+    width="auto"
+    height="40px"
+    alt="back"
+    (click)="this.DBService.view = 'menu'"
+  /> 
   <div class="wrapper">
     <div class="card">
       <form [formGroup]="createForm" class="needs-validation" novalidate>
@@ -9,7 +16,7 @@
             <input
               formControlName="nombre"
               id="nombre"
-              class="form-control"
+              class="form-control mb-3"
               placeholder="Nombre"
               required
               [ngClass]="{
@@ -29,7 +36,7 @@
             <input
               formControlName="fecha"
               id="fecha"
-              class="form-control"
+              class="form-control  mb-3"
               placeholder="Fecha"
               required
               [ngClass]="{
@@ -49,7 +56,7 @@
             <input
               formControlName="accion"
               id="accion"
-              class="form-control"
+              class="form-control  mb-3"
               placeholder="Accion"
               required
               [ngClass]="{
