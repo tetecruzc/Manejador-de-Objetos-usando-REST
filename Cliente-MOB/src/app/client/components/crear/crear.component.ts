@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 import { DBService } from '../../db.service';
 @Component({
@@ -11,7 +12,7 @@ export class CrearComponent implements OnInit {
   createForm: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder, public DBService: DBService) {
+  constructor(private formBuilder: FormBuilder, public DBService: DBService,  private toastr: ToastrService) {
     this.buildForm();
    }
 
@@ -28,8 +29,8 @@ export class CrearComponent implements OnInit {
   }
 
   createObject(): void {
-    this.DBService.createObject(this.createForm.value).subscribe(data=>{
-      console.log(data);
+    this.DBService.createObject(this.createForm.value).subscribe(data =>{
+      this.toastr.success(data.message);
     })
   }
 }

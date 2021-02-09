@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DBService } from '../../db.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-eliminar',
@@ -13,7 +14,8 @@ export class EliminarComponent implements OnInit {
   
   constructor(
     public DBService: DBService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
   ) { }
   
   ngOnInit(): void {
@@ -27,11 +29,11 @@ export class EliminarComponent implements OnInit {
       this.loading = true;
       this.DBService.deleteObject(id)
       .then(() => {
-        console.log("Objeto eliminado");
+        this.toastr.success('Objeto eliminado');
         this.form.setValue({id: null});
       })
       .catch(() => {
-        console.log("Ocurrio un error");
+        this.toastr.error("Ocurrio un error eliminando el objeto");
       })
       .finally(() => this.loading = false)
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 import { DBService } from '../../db.service';
 
@@ -29,7 +30,8 @@ export class ReplicarRestaurarComponent implements OnInit {
   
   constructor(
     public DBService: DBService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
   ) { }
   
   makeAction(): void {
@@ -71,10 +73,10 @@ export class ReplicarRestaurarComponent implements OnInit {
   replicar(action: string): void{
     this.DBService.replicateObject(action)
     .then(() => {
-      console.log('Objeto replicado exitosamente')
+      this.toastr.success('Base de datos replicada con éxito');
     })
     .catch((err) => {
-      console.log('Error es:' + err)
+      this.toastr.error('Error replicando la base de datos');
     })
     .finally(() => this.loading = false)
   }
@@ -82,10 +84,10 @@ export class ReplicarRestaurarComponent implements OnInit {
   restaurar(server: string): void {
     this.DBService.replicateObject(server)
     .then(() => {
-      console.log('Objeto restaurado exitosamente')
+      this.toastr.success('Base de datos restaurada con éxito');
     })
     .catch((err) => {
-      console.log('Error es:' + err)
+      this.toastr.error('Error restaurando la base de datos');
     })
     .finally(() => this.loading = false)
   }
