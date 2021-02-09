@@ -14,24 +14,28 @@
       <div class="col">
         <div class="card d-flex flex-column">
           <h4>Consultar objetos</h4>
+          <fa-icon class="feature-icon" [icon]="searchIcon"></fa-icon>
           <button type="button" class="btn mt-auto" (click)="this.DBService.view = 'consultar'">Ir</button>
         </div>
       </div>
       <div class="col">
         <div class="card d-flex flex-column">
           <h4>Crear objeto</h4>
+          <fa-icon class="feature-icon" [icon]="plusIcon"></fa-icon>
           <button type="button" class="btn mt-auto" (click)="this.DBService.view = 'crear'">Ir</button>
         </div>
       </div>
       <div class="col">
         <div class="card d-flex flex-column">
           <h4>Eliminar objeto</h4>
+          <fa-icon class="feature-icon" [icon]="trashIcon"></fa-icon>
           <button type="button" class="btn mt-auto" (click)="this.DBService.view = 'eliminar'">Ir</button>
         </div>
       </div>
       <div class="col">
         <div class="card d-flex flex-column">
-          <h4>Replicar y restaurar datos</h4>
+          <h4>Replicar / Restaurar</h4>
+          <fa-icon class="feature-icon" [icon]="replyIcon"></fa-icon>
           <button type="button" class="btn mt-auto" (click)="this.DBService.view = 'replicar-restaurar'">Ir</button>
         </div>
       </div>
