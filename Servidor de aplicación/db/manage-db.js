@@ -48,6 +48,15 @@ const transformObject = (object, id) =>{
     return transformatedObject;
 }
 
+const validateExistence = (id) =>{
+    const allObjects = getObjects();
+    const index = allObjects.Objetos.Objeto.findIndex(object => object.id._text === id)
+
+    if (index > -1) return true;
+    return false;
+}
+
+
 // CRUDS
 
 const searchAllObjects = () => {
@@ -85,3 +94,4 @@ exports.createObject = createObject;
 exports.deleteObject = deleteObject;
 exports.replicateObjects = replicateObjects;
 exports.saveFile = saveFile;
+exports.validateExistence= validateExistence;

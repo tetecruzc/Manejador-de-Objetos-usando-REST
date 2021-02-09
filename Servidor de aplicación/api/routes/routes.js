@@ -20,9 +20,12 @@ router.post('/crear', (req,res,next)=>{
 })
 
 router.delete('/eliminar/:id', (req,res,next)=>{
-    if (!req.params.id) res.status(404).json({message: 'ID requerido'})
-  
-    db.deleteObject(req.params.id)
+    const { id } = req.params;
+
+    if (!id) return res.status(404).json({message: 'ID requerido'})
+    if (!db.validateExistence(id))  return res.status(404).json({message: `El objecto ID = ${id} no existe`})
+    
+    db.deleteObject(id)
     res.status(204).json({
         message: 'Objeto eliminado satisfactoriamente'
     })
