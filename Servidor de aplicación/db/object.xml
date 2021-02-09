@@ -24,10 +24,4 @@
         <Nombre>RUI ALLEYNE</Nombre>
         <Accion>COMMIT</Accion>
     </Objeto>
-    <Objeto>
-        <id>5</id>
-        <Fecha>10/10/2001</Fecha>
-        <Nombre>ROMINA CRUZ</Nombre>
-        <Accion>COMMIT</Accion>
-    </Objeto>
 </Objetos>

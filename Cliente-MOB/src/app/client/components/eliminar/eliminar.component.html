@@ -1,1 +1,43 @@
-<p>eliminar works!</p>
+<div>
+    <button type="button" class="btn btn-dark mr-3" (click)="this.DBService.view = 'menu'">Menu Principal</button>
+    <div class="row mt-5">
+      <div class="col">
+        <div class="card">
+            <form [formGroup]="form" class="needs-validation" novalidate (ngSubmit)="deleteObject()">
+                    <div class="form-row mb-2">
+                        <div class="col">
+                        <input
+                            formControlName="id"
+                            type="number"
+                            id="id"
+                            class="form-control mb-3"
+                            placeholder="Introduce el ID del objeto a eliminar"
+                            required
+                            [ngClass]="{
+                            'is-invalid':
+                                this.form.get('id').invalid &&
+                                this.form.get('id').touched
+                            }"
+                        />
+                        <div class="invalid-feedback font-size-11px mt-n3">
+                            El ID es requerido
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row mx-0">
+                        <button class="btn btn-dark btn-block" [disabled]="loading">
+                            <span
+                                *ngIf="loading"
+                                class="spinner-border spinner-border-sm"
+                                role="status"
+                                aria-hidden="true"
+                                ></span>
+                            Eliminar objeto
+                        </button>
+                    </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
